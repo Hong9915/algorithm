@@ -1,9 +1,10 @@
-import math
+
+from math import sqrt
 
 def solution(r1, r2):
-    answer = 0
-    for x in range(1, r2 + 1): 
-        maxY = math.floor((r2**2 - x**2)**0.5)
-        minY = math.ceil((r1**2 - x**2)**0.5) if x < r1 else 0
-        answer += (maxY - minY + 1)  
-    return answer * 4 
+    quar = 0
+    for i in range(0, r1):
+        quar += int(sqrt(r2**2 - i**2)) - int(sqrt(r1**2 - i**2 - 1))
+    for i in range(r1, r2):
+        quar += int(sqrt(r2**2 - i**2))
+    return quar * 4
