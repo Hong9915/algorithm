@@ -15,6 +15,6 @@ def solution(m, n, puddles):
             if (i,j) in set_puddles:
                 continue
             else:
-                dp[i][j] = (dp[i-1][j] + dp[i][j-1])% MOD
+                dp[i][j] = (dp[i-1][j] + dp[i][j-1])
     
-    return dp[n][m]
+    return dp[n][m] % MOD
